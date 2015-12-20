@@ -10,7 +10,9 @@ nano dna.json
 
 # set line with “vagrant” to fasle
 # set line with “ssl” to fasle
-# delete line with “fqdn__renamed”
+# if no FQDN delete line with “fqdn__renamed”
+# if valid FQDN change line with “fqdn__renamed” to what your fully qualified domain name would be,
+#   then rename “fqdn__renamed” to “fqdn”
 # save and exit
 
 cd /opt/rogue-chef-repo/scripts
