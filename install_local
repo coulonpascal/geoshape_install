@@ -1,0 +1,26 @@
+Requirement - fresh install of Ubuntu Server 14.04 on Virtual; 10Gb RAM, 100Gb hard drive, 2 cores
+# set /etc/hosts 
+# set /etc/hostname
+sudo su -
+cd /opt
+apt-get install git
+git clone https://github.com/ROGUE-JCTD/rogue-chef-repo.git
+cd /opt/rogue-chef-repo/solo
+nano dna.json
+
+# set line with “vagrant” to fasle
+# set line with “ssl” to fasle
+# delete line with “fqdn__renamed”
+# save and exit
+
+cd /opt/rogue-chef-repo/scripts
+# change gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+# to gpg --keyserver 213.133.103.71 --recv-keys D39DC0E3
+./geoshape-install.sh
+
+# when it completes successfully, the last line you see should read:
+Chef Client finished, ###/### resources updated in ### seconds
+
+# if you later want to enable ssl you can go to /opt/chef-run/
+# edit dna.json and then 
+# run ./geoshape-provision from that folder 
