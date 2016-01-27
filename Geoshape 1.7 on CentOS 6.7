@@ -7,3 +7,13 @@ wget  http://yum.boundlessps.com/geoshape.repo
 yum -y install geoshape
 exit
 sudo geoshape-config init <ip or domain>
+
+
+# To resolve issue from https://github.com/ROGUE-JCTD/rpmbuild/issues/5
+# Upload shapefile to new Geogig repo
+sudo su -
+cd /var/lib/geoserver_data/workspaces/geonode
+ls -la
+# Compare group owner and permissions between new Geogig repo and od3_repo
+chgrp geoservice /var/lib/geoserver_data/workspaces/geonode/new_Geogig_repo
+chmod 775 /var/lib/geoserver_data/workspaces/geonode /new_Geogig_repo
