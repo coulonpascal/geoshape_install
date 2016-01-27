@@ -15,12 +15,16 @@ sudo su -
 cd /var/lib/geoserver_data/workspaces/geonode
 ls -la
 # Compare group owner and permissions between new Geogig repo and od3_repo
+
+# Change group owner from tomcat to geoservice
 chgrp -R geoservice /var/lib/geoserver_data/workspaces/geonode/new_Geogig_repo
+
+# Grant group write permission
 chmod -R 775 /var/lib/geoserver_data/workspaces/geonode/new_Geogig_repo
 
 # To resolve issue from https://github.com/ROGUE-JCTD/rpmbuild/issues/4
 sudo su -
 cd /var/lib/geoserver_data/tilebundler-store
 ls -la
-# Check for write user permission, if - then
+# Check for user write permission, if w do nothing, if - then
 chmod 777 /var/lib/geoserver_data/tilebundler-store
