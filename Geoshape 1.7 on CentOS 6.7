@@ -1,0 +1,8 @@
+# Configure CentOS 6.7 with static ip, nano, git and rpm as per http://giovannitorres.me/how-to-setup-an-rpm-build-environment-on-centos-6.html
+
+sudo su -
+cd /etc/yum.repos.d/
+wget  http://yum.boundlessps.com/geoshape.repo
+yum -y install geoshape
+exit
+sudo geoshape-config init <ip or domain>
