@@ -29,6 +29,9 @@ chgrp -R geoservice /var/lib/geoserver_data/workspaces/geonode/new_Geogig_repo
 # Grant group write permission
 chmod -R 775 /var/lib/geoserver_data/workspaces/geonode/new_Geogig_repo
 
+# For good measure apply same changes, if needed to, /var/lib/geoserver_data/geogig/new_Geogig_repo
+
+
 # To resolve issue from https://github.com/ROGUE-JCTD/rpmbuild/issues/4
 sudo su -
 cd /var/lib/geoserver_data/tilebundler-store
