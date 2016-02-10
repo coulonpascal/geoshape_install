@@ -5,7 +5,19 @@ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 change ONBOOT=no to ONBOOT=yes
 :wq # to save and quit
 
-# install nano, git and rpm as per http://giovannitorres.me/how-to-setup-an-rpm-build-environment-on-centos-6.html
+# install nano
+yum install -y nano
+
+# set static ip
+nano /etc/sysconfig/network-scripts/ifcfg-eth0
+# sample ifcfg-eth0 file for a system using a fixed IP address:
+DEVICE=eth0 
+BOOTPROTO=none 
+ONBOOT=yes 
+NETMASK=255.255.255.0 
+IPADDR=10.0.1.27 
+USERCTL=no
+
 # create non-root user and add to sudoers
 
 sudo su -
